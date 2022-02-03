@@ -59,5 +59,5 @@ os.remove(fileName)
 os.remove(title + ".cmt.xml")
 
 f = open('song_name.txt','w+')
-f.write(title + '.' + format)
+f.write(title + '.mp3' )
 f.close()

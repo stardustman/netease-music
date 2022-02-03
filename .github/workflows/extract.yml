@@ -1,0 +1,34 @@
+name: extract-audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_link:
+        description: 'video link to extract audio'
+        required: true
+        default: 'https://www.bilibili.com/video/BV12p411o75M'
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies 
+        run: |
+          pip install -r requirements.txt
+          npm i
+
+      - name: extract video from target video
+        run: |
+          export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
+          python audio-extractor.py
+
+      - name: Upload audio to NetEaseMusic
+        run: |
+          node index.js
+        env:
+          PHONE: ${{ secrets.PHONE }}
+          PASSWORD: ${{ secrets.PASSWORD }}

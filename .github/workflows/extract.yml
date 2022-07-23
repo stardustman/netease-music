@@ -4,10 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       video_link:
-        description: 'video link to extract audio'
+        description: "video link to extract audio"
         required: true
-        default: 'https://www.bilibili.com/video/BV12p411o75M'
-
+        default: "https://www.bilibili.com/video/BV1KY411g7iA"
+      final_music_name:
+        description: "music name upload to cloud"
+        required: false
+        default: "if not provided, use video name as music name"
 
 jobs:
   build:
@@ -16,14 +19,15 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: Install Dependencies 
+      - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          npm i
+          npm ci
 
       - name: extract video from target video
         run: |
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
+          export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           python audio-extractor.py
 
       - name: Upload audio to NetEaseMusic

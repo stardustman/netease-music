@@ -10,7 +10,6 @@ final_music_name = os.environ["FINAL_MUSIC_NAME"]
 print(video_link)
 print(final_music_name)
 
-# you-get -O 镰仓殿的13人  --no-caption
 p = subprocess.run(["you-get", "-O", final_music_name, "--no-caption", video_link],
                    capture_output=True, encoding="utf-8")
 

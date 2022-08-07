@@ -8,8 +8,8 @@ on:
         required: true
         default: "https://www.bilibili.com/video/BV1KY411g7iA"
       final_music_name:
-        description: "music name upload to cloud"
-        required: false
+        description: "input music name "
+        required: true
         default: ""
 
 jobs:

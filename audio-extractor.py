@@ -14,7 +14,6 @@ p = subprocess.run(["you-get", video_link],
                    capture_output=True, encoding="utf-8")
 
 '''
-
 site:                Bilibili
 title:               【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】
 stream:
@@ -30,38 +29,35 @@ Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【�
 Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】.cmt.xml ...
 '''
 res = p.stdout.splitlines()
+song_name = final_music_name
+// default format
+video_format = 'flv'
 for x in range(len(res)):
-    print(res[x])
+    print(repr(res[x]))
+    fileds = x.split(":")
+    if fileds[0] == 'title':
+        song_name = fileds[1]
+    if fileds[0] == 'container':
+        video_format = fileds[1]
 
 
-# Get the current working directory
-cwd = os.getcwd()
-# Get all file
-# 2. get video name by xxx.cmt.xml file
 files = os.listdir(os.getcwd())
 title = ''
 fileName= ''
 for file in files:
     if(file.endswith('.cmt.xml')):
         title = file.split('.')[0]
-    else:
+    if(file.endswith(format)):
         fileName = file
-
-
-# print(format)
-# fileName = cwd + '/' + title + '.' + format
+// 在 workflow 里没有指定最终音乐名称
 if(len(final_music_name) == 0):
-    final_music_name = fileName
+    final_music_name = song_names
 
-# print("title is " + title)
-# print("file path is ：" + repr(fileName))
-my_clip = mp.VideoFileClip(filename=final_music_name)
-my_clip.audio.write_audiofile(title + ".mp3")
+my_clip = mp.VideoFileClip(filename=fileName)
+my_clip.audio.write_audiofile(final_music_name + ".mp3")
 my_clip.close()
 
-os.remove(fileName)
-os.remove(title + ".cmt.xml")
 
 f = open('song_name.txt','w+')
-f.write(title + '.mp3' )
+f.write(final_music_name + '.mp3' )
 f.close()

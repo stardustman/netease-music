@@ -26,8 +26,8 @@ stream:
 Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】.flv ...
 '''
 res = p.stdout.splitlines()
-for x in range(len(res)):
-    print(res[x])
+# for x in range(len(res)):
+    # print(res[x])
 
 # print(len(s))
 # print(res[1])

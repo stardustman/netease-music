@@ -47,7 +47,7 @@ fileName= ''
 for file in files:
     if(file.endswith('.cmt.xml')):
         title = file.split('.')[0]
-    if(file.endswith(format)):
+    if(file.endswith(video_format)):
         fileName = file
 # 在 workflow 里没有指定最终音乐名称
 if(len(final_music_name) == 0):

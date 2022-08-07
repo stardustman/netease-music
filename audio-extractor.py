@@ -30,7 +30,7 @@ Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【�
 '''
 res = p.stdout.splitlines()
 song_name = final_music_name
-// default format
+# default format
 video_format = 'flv'
 for x in range(len(res)):
     print(repr(res[x]))
@@ -49,7 +49,7 @@ for file in files:
         title = file.split('.')[0]
     if(file.endswith(format)):
         fileName = file
-// 在 workflow 里没有指定最终音乐名称
+# 在 workflow 里没有指定最终音乐名称
 if(len(final_music_name) == 0):
     final_music_name = song_names
 

@@ -39,8 +39,9 @@ for x in range(len(res)):
 
 
 files = os.listdir(os.getcwd())
-fileName= ''
+fileName = ''
 for file in files:
+    print(file)
     if(file.startswith(final_music_name)):
         fileName = file
         break

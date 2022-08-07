@@ -10,7 +10,7 @@ on:
       final_music_name:
         description: "input music name "
         required: true
-        default: ""
+        default: "镰仓殿的13人"
 
 jobs:
   build:
@@ -26,6 +26,7 @@ jobs:
 
       - name: extract video from target video
         run: |
+          pwd
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           python audio-extractor.py

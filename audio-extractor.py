@@ -33,12 +33,15 @@ song_name = final_music_name
 # default format
 video_format = 'flv'
 for x in range(len(res)):
+    print('#############################')
+    print(res[x])
     print(repr(res[x]))
     fileds = x.split(":")
     if fileds[0] == 'title':
         song_name = fileds[1]
     if fileds[0] == 'container':
         video_format = fileds[1]
+
 
 
 files = os.listdir(os.getcwd())

@@ -10,7 +10,7 @@ on:
       final_music_name:
         description: "music name upload to cloud"
         required: false
-        default: "use video name as music name"
+        default: ""
 
 jobs:
   build:

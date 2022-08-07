@@ -10,7 +10,7 @@ on:
       final_music_name:
         description: "music name upload to cloud"
         required: false
-        default: "if not provided, use video name as music name"
+        default: "use video name as music name"
 
 jobs:
   build:
@@ -26,6 +26,9 @@ jobs:
 
       - name: extract video from target video
         run: |
+          mkdir music
+          cd music 
+          ls -al
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           python audio-extractor.py

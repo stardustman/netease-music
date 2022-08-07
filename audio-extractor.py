@@ -14,6 +14,7 @@ p = subprocess.run(["you-get", video_link],
                    capture_output=True, encoding="utf-8")
 
 '''
+
 site:                Bilibili
 title:               【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】
 stream:
@@ -24,19 +25,14 @@ stream:
     # download-with: you-get --format=flv [URL]
 
 Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】.flv ...
+ 100% ( 32.5/ 32.5MB) ├████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████┤[1/1]  612 kB/s
+
+Downloading 【鎌倉殿の13人 (OP) 】 窥探历史的陈迹   钢琴曲【高音質】.cmt.xml ...
 '''
 res = p.stdout.splitlines()
-# for x in range(len(res)):
-    # print(res[x])
+for x in range(len(res)):
+    print(res[x])
 
-# print(len(s))
-# print(res[1])
-
-# 1. get video format
-# print(res[4])
-# format = (res[4].split(":")[1]).strip()
-# format = ''.join([i for i in fmt if not i.isdigit()])
-# print(format)
 
 # Get the current working directory
 cwd = os.getcwd()

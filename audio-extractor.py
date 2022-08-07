@@ -52,6 +52,10 @@ for file in files:
 # 在 workflow 里没有指定最终音乐名称
 if(len(final_music_name) == 0):
     final_music_name = song_names
+print('.................')
+print(final_music_name)
+print(fileName)
+print('.................')
 
 my_clip = mp.VideoFileClip(filename=fileName)
 my_clip.audio.write_audiofile(final_music_name + ".mp3")

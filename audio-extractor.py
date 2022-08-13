@@ -10,10 +10,10 @@ final_music_name = os.environ["FINAL_MUSIC_NAME"]
 print(video_link)
 print(final_music_name)
 
-p = subprocess.run(["you-get", "-O", final_music_name, "--no-caption", video_link],
-                   timeout=1000,
-                   capture_output=True, 
-                   encoding="utf-8")
+# p = subprocess.run(["you-get", "-O", final_music_name, "--no-caption", video_link],
+#                    timeout=1000,
+#                    capture_output=True, 
+#                    encoding="utf-8")
 
 '''
 you-get -O 镰仓殿的13人  --no-caption   https://www.bilibili.com/video/BV1KY411g7iA
@@ -31,11 +31,11 @@ Downloading 镰仓殿的13人.flv ...
 
 Skipping captions or danmaku.
 '''
-res = p.stdout.splitlines()
+# res = p.stdout.splitlines()
 
-for x in range(len(res)):
-    print(res[x])
-    print(repr(res[x]))
+# for x in range(len(res)):
+#     print(res[x])
+#     print(repr(res[x]))
 
 
 

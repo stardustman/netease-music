@@ -35,10 +35,10 @@ jobs:
         run: |
           pwd
           ls -al
-          you-get --debug --output-filename ${{ github.event.inputs.final_music_name }} --no-caption ${{ github.event.inputs.video_link }}  
+          you-get --debug --output-filename "${{ github.event.inputs.final_music_name }}" --no-caption ${{ github.event.inputs.video_link }}  
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
-          ls -al
+          ls -a
           python audio-extractor.py
 
       - name: Upload audio to NetEaseMusic

@@ -32,9 +32,9 @@ jobs:
         run: |
           pwd
           ls -al
+          you-get -O ${{ github.event.inputs.video_link }}  --no-caption ${{ github.event.inputs.final_music_name }}
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
-          you-get -O $FINAL_MUSIC_NANE  --no-caption $VIDEO_LINK
           ls -al
           python audio-extractor.py
 

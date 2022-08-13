@@ -31,6 +31,8 @@ jobs:
       - name: extract video from target video
         run: |
           pwd
+          ls -al
+          which you-get
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           python audio-extractor.py

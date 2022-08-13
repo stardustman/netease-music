@@ -13,7 +13,6 @@ print(final_music_name)
 p = subprocess.run(["you-get", "-O", final_music_name, "--no-caption", video_link],
                    timeout=1000,
                    capture_output=True, 
-                   shell=True,
                    encoding="utf-8")
 
 '''

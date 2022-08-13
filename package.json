@@ -12,6 +12,6 @@
   "author": "stardust",
   "license": "ISC",
   "dependencies": {
-    "NeteaseCloudMusicApi": "^4.6.6"
+    "NeteaseCloudMusicApi": "^4.6.7"
   }
 }

@@ -13,8 +13,8 @@ on:
         default: "镰仓殿的13人"
 
 jobs:
-  build:
-    runs-on: macos-latest
+  extract:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2

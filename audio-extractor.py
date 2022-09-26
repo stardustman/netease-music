@@ -14,10 +14,20 @@ print(final_music_name)
 
 
 
-p = subprocess.run(["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
-                   timeout=10000,
-                   capture_output=True, 
-                   encoding="utf-8")
+# p = subprocess.run(["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
+#                    timeout=10000,
+#                    capture_output=True, 
+#                    encoding="utf-8")
+
+process = subprocess.Popen(
+       ["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    )
+output, error = process.communicate()
+
+if process.returncode != 0:
+    raise Exception("File handling failed %d %s %s" % (process.returncode, output, error))
 
 '''
 you-get -O 镰仓殿的13人  --no-caption   https://www.bilibili.com/video/BV1KY411g7iA

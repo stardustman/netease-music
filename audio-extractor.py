@@ -1,3 +1,4 @@
+#/usr/bin/env bash
 # -*- coding: utf-8 -*-
 import subprocess
 import os
@@ -8,6 +9,7 @@ import moviepy.editor as mp
 
 video_link = os.environ["VIDEO_LINK"]
 final_music_name = os.environ["FINAL_MUSIC_NAME"]
+
 
 print(video_link)
 print(final_music_name)
@@ -24,6 +26,7 @@ process = subprocess.Popen(
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
+process.wait()
 output, error = process.communicate()
 
 if process.returncode != 0:
@@ -45,13 +48,6 @@ Downloading 镰仓殿的13人.flv ...
 
 Skipping captions or danmaku.
 '''
-# res = p.stdout.splitlines()
-
-# for x in range(len(res)):
-#     print(res[x])
-#     print(repr(res[x]))
-
-
 
 files = os.listdir(os.getcwd())
 fileName = ''

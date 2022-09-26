@@ -5,15 +5,19 @@ import moviepy.editor as mp
 
 # VIDEO_LINK from github actions
 # FINAL_MUSIC_NAME from github actions
+
 video_link = os.environ["VIDEO_LINK"]
 final_music_name = os.environ["FINAL_MUSIC_NAME"]
+
 print(video_link)
 print(final_music_name)
 
-# p = subprocess.run(["you-get", "-O", final_music_name, "--no-caption", video_link],
-#                    timeout=1000,
-#                    capture_output=True, 
-#                    encoding="utf-8")
+
+
+p = subprocess.run(["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
+                   timeout=10000,
+                   capture_output=True, 
+                   encoding="utf-8")
 
 '''
 you-get -O 镰仓殿的13人  --no-caption   https://www.bilibili.com/video/BV1KY411g7iA

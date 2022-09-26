@@ -34,11 +34,11 @@ jobs:
           pip install -r requirements.txt
           npm ci
 
-      - name: extract video from target video
+      - name: extract audio from target video
         run: |
           pwd
           ls -al
-          you-get --debug --output-filename "${{ github.event.inputs.final_music_name }}" --no-caption ${{ github.event.inputs.video_link }}  
+          # you-get --debug --output-filename "${{ github.event.inputs.final_music_name }}" --no-caption ${{ github.event.inputs.video_link }}  
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           ls -a

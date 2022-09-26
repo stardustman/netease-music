@@ -1,6 +1,6 @@
 # why?
-reject to buy a vip to listen music.
-extract audio from video which download from Bilibili and upload cloud disk
+not happy to buy a vip to listen music.
+extract audio from video which download from Bilibili and upload to cloud storage.
 
 # dependecies
 
@@ -10,10 +10,11 @@ extract audio from video which download from Bilibili and upload cloud disk
 ## install node_modules
 1. npm i
 
-# set secrets
+# [set repo secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces#adding-secrets-for-a-repository)
 1. PHONE (your netease cloud music accout)
 2. PASSWORD (your netease cloud music accout password)
 
 # how to use?
-give a video link from bilibili, trigger the workflow manually.
-
+1. [fork the repo](https://github.com/stardustman/netease-music/fork)
+2. set repo secrets for you account.
+3. give a video link from bilibili, add your final music name, trigger the workflow manually.

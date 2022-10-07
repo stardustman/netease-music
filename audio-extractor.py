@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#/usr/bin/env python
 # -*- coding: utf-8 -*-
 import subprocess
 import os
@@ -21,16 +21,16 @@ print(final_music_name)
 #                    capture_output=True, 
 #                    encoding="utf-8")
 
-process = subprocess.Popen(
-       ["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
-    )
-process.wait()
-output, error = process.communicate()
+# process = subprocess.Popen(
+#        ["you-get", "--debug","--output-filename", final_music_name, "--no-caption", video_link],
+#         stdout=subprocess.PIPE,
+#         stderr=subprocess.PIPE
+#     )
+# process.wait()
+# output, error = process.communicate()
 
-if process.returncode != 0:
-    raise Exception("File handling failed %d %s %s" % (process.returncode, output, error))
+# if process.returncode != 0:
+#     raise Exception("File handling failed %d %s %s" % (process.returncode, output, error))
 
 '''
 you-get -O 镰仓殿的13人  --no-caption   https://www.bilibili.com/video/BV1KY411g7iA

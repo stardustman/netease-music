@@ -22,11 +22,11 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-          cache: 'pip'
+          cache: "pip"
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: package-lock.json
 
       - name: Install Dependencies
@@ -38,11 +38,11 @@ jobs:
         run: |
           pwd
           ls -al
-          # you-get --debug --output-filename "${{ github.event.inputs.final_music_name }}" --no-caption ${{ github.event.inputs.video_link }}  
+          you-get --debug --output-filename "${{ github.event.inputs.final_music_name }}" --no-caption ${{ github.event.inputs.video_link }}  
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           ls -a
-          python audio-extractor.py
+          ./audio-extractor.py
 
       - name: Upload audio to NetEaseMusic
         run: |

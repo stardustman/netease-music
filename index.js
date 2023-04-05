@@ -6,7 +6,7 @@ async function main() {
   const result = await login_cellphone({
     phone: process.env.PHONE,
     password: process.env.PASSWORD,
-  })
+  }).catch(e => console.error(e))
   const filePath = fs.readFileSync('song_name.txt').toString()
   try {
     const resp = await cloud({
@@ -21,4 +21,4 @@ async function main() {
     console.log(error, 'error')
   }
 }
-await main()
+await main().catch(e => console.error(e))

@@ -42,7 +42,7 @@ jobs:
           export "VIDEO_LINK=${{ github.event.inputs.video_link }}"
           export "FINAL_MUSIC_NAME=${{ github.event.inputs.final_music_name }}"
           ls -a
-          ./audio-extractor.py
+          python audio-extractor.py
 
       - name: Upload audio to NetEaseMusic
         run: |
